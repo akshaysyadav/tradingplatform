@@ -4,10 +4,9 @@ const Summary = () => {
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi, User! </h6>
         <hr className="divider" />
       </div>
-
       <div className="section">
         <span>
           <p>Equity</p>

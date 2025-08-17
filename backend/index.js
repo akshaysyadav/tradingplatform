@@ -6,6 +6,7 @@ const Holdingmodel = require("./model/Holdingmodel");
 const Positionmodel = require("./model/Positionmodel");
 const Ordermodel = require("./model/Ordermodel");
 
+const authRoutes = require("./routes/auth");
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -21,6 +22,7 @@ mongoose.connect(url)
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use("/auth", authRoutes);
 
 
 // app.get('/addHoldings', async (req, res) => {
