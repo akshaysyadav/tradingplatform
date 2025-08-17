@@ -3,7 +3,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Holdingmodel = require("./model/Holdingmodel");
-const Positionmodel = require("./model/Positionmodel"); 
+const Positionmodel = require("./model/Positionmodel");
+const Ordermodel = require("./model/Ordermodel");
+
+
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
 
 const port = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
@@ -12,6 +18,10 @@ const url = process.env.MONGO_URL;
 mongoose.connect(url)
   .then(() => console.log("DB connected"))
   .catch(err => console.error("DB connection error:", err));
+
+app.use(cors());
+app.use(bodyParser.json());
+
 
 // app.get('/addHoldings', async (req, res) => {
 //   let tempHoldings = [
@@ -87,6 +97,30 @@ mongoose.connect(url)
 
 // res.send("All positions saved successfully!");
 // });
+
+app.get("/allholding", async(req,res)=>{
+  let allHolding = await Holdingmodel.find({});
+  res.json(allHolding);
+});
+
+app.get("/allposition", async(req,res)=>{
+  let allposition = await Positionmodel.find({});
+  res.json(allposition);
+});
+
+app.post("/newOrder", async (req, res) => {
+  let newOrder = new OrdersModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+
+  newOrder.save();
+
+  res.send("Order saved!");
+});
+
 
 
 app.listen(port, () => {
