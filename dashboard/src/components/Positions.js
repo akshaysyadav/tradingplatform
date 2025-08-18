@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h2>Dashboard</h2>
+      <h2>Dashboard</h2>  <br />
       <table className="positions-table">
         <thead>
           <tr>
