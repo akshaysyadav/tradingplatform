@@ -1,22 +1,22 @@
 .summary-container {
-  font-family: Arial, sans-serif;
   max-width: 1000px;
   margin: 0 auto;
   padding: 25px;
+  font-family: Arial, sans-serif;
   background-color: #f8f9fa;
 }
 
-.card {
+.summary-card {
   background-color: white;
   padding: 20px 25px;
   border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .user-card h6 {
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
   font-size: 18px;
   font-weight: 600;
   color: #495057;
@@ -29,118 +29,59 @@
   margin: 0;
 }
 
-.section-card .section-title {
-  margin-bottom: 15px;
+.section-title {
   font-size: 16px;
   font-weight: 600;
   color: #6c757d;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 15px;
 }
 
-.section-content {
+.section-data {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.section-left {
+.left, .right {
   flex: 1;
   min-width: 200px;
 }
 
-.section-left .amount {
-  margin: 0 0 5px 0;
+.left h3 {
   font-size: 32px;
   font-weight: 700;
+  margin: 0 0 5px 0;
   color: #28a745;
 }
 
-.section-left .subtitle {
+.left p {
   margin: 0;
   font-size: 14px;
   color: #6c757d;
 }
 
-.percent {
+.right p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.right span {
+  font-weight: 600;
+  color: #495057;
+}
+
+.profit {
   font-size: 14px;
   background-color: #d4edda;
   color: #155724;
-  padding: 4px 8px;
+  padding: 2px 6px;
   border-radius: 12px;
   font-weight: 600;
-}
-
-.divider-vertical {
-  width: 1px;
-  height: 60px;
-  background-color: #dee2e6;
-  margin: 0 10px;
-}
-
-.section-right {
-  flex: 1;
-  min-width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.info-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info-row span {
-  color: #6c757d;
-  font-size: 14px;
-}
-
-.info-value {
-  font-weight: 600;
-  color: #495057;
-  background-color: #f8f9fa;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.summary-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.stat-card {
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e9ecef;
-  text-align: center;
-}
-
-.stat-title {
-  margin: 0 0 5px 0;
-  font-size: 12px;
-  color: #6c757d;
-  text-transform: uppercase;
-}
-
-.stat-value {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 700;
-  color: #495057;
-}
-
-.stat-value.positive {
-  color: #28a745;
-}
-
-.stat-value.holdings {
-  color: #6f42c1;
+  margin-left: 5px;
 }
