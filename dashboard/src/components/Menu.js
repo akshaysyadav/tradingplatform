@@ -9,8 +9,8 @@ const Menu = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Clear token
-    window.location.href = "https://tradingplatform-tau.vercel.app/"; // Redirect
+    localStorage.removeItem("token"); 
+    window.location.href = "https://tradingplatform-tau.vercel.app/"; 
   };
 
   const menuClass = "menu";
@@ -46,7 +46,7 @@ const Menu = () => {
         <div
           className="profile logout-btn"
           onClick={handleLogout}
-          style={{ cursor: "pointer", textAlign: "center", padding: "10px" }}
+          style={{ cursor: "pointer", textAlign: "center", padding: "10px" , }}
         >
           <div className="avatar">Logout</div>
         </div>

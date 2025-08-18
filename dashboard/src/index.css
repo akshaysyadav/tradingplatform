@@ -298,31 +298,30 @@ hr {
 .profile {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center; /* center the button */
   margin-left: 20px;
+  cursor: pointer; /* indicate it's clickable */
 }
 
 .profile .avatar {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  position: relative;
-  font-size: 0.7rem;
-  font-weight: 400;
-  color: rgb(221, 139, 221);
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  text-align: center;
+  width: 80px;           /* wider for button */
+  height: 35px;          /* taller for button */
   display: flex;
-  background: rgb(252, 229, 252);
-  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;           /* white text */
+  border-radius: 8px;    /* rounded corners */
+  background: #e53935;   /* red button */
+  border: none;
+  transition: background 0.3s ease;
 }
 
-.profile .username {
-  font-size: 0.8rem;
-  font-weight: 300;
+.profile .avatar:hover {
+  background: #b71c1c;   /* darker red on hover */
 }
+
 
 /* sudo selectors */
 
