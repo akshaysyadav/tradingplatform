@@ -12,10 +12,10 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3002/auth/login", form);
+      const res = await axios.post("https://tradingplatform-lv6u.onrender.com/auth/login", form);
       localStorage.setItem("token", res.data.token);
       alert("Login successful!");
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://tradingplatform-1.onrender.com";
     } catch (err) {
       alert(err.response?.data?.error || "Something went wrong");
     }

@@ -12,7 +12,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3002/auth/signup", form);
+      await axios.post("https://tradingplatform-lv6u.onrender.com/auth/signup", form);
       alert("User registered successfully!");
     } catch (err) {
       alert(err.response.data.error);
