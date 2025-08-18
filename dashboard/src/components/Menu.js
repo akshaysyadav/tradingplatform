@@ -27,7 +27,6 @@ const Menu = () => {
             { name: "Holdings", path: "/holdings" },
             { name: "Positions", path: "/positions" },
             { name: "Funds", path: "/funds" },
-            { name: "Apps", path: "/apps" },
           ].map((menu, index) => (
             <li key={index}>
               <Link
