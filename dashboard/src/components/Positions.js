@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "./Positions.css";
 
 const Dashboard = () => {
   const [positions, setPositions] = useState([]);
@@ -11,9 +12,9 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="dashboard-container">
       <h2>Dashboard</h2>
-      <table border="1">
+      <table className="positions-table">
         <thead>
           <tr>
             <th>Name</th>
