@@ -12,8 +12,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="dashboard-container">
-      <h2>Dashboard</h2>  <br />
+    <div className="dash-container">
       <table className="positions-table">
         <thead>
           <tr>
