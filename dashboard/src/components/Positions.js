@@ -1,48 +1,44 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-import { positions } from "../data/data";
+const Dashboard = () => {
+  const [positions, setPositions] = useState([]);
 
-const Positions = () => {
+  useEffect(() => {
+    axios.get("https://tradingplatform-lv6u.onrender.com/allposition")
+      .then(res => setPositions(res.data))
+      .catch(err => console.error(err));
+  }, []);
+
   return (
-    <>
-      <h3 className="title">Positions ({positions.length})</h3>
-
-      <div className="order-table">
-        <table>
+    <div>
+      <h2>Dashboard</h2>
+      <table border="1">
+        <thead>
           <tr>
-            <th>Product</th>
-            <th>Instrument</th>
-            <th>Qty.</th>
-            <th>Avg.</th>
-            <th>LTP</th>
-            <th>P&L</th>
-            <th>Chg.</th>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Avg</th>
+            <th>Price</th>
+            <th>Net</th>
+            <th>Day</th>
           </tr>
-
-          {positions.map((stock, index) => {
-            const curValue = stock.price * stock.qty;
-            const isProfit = curValue - stock.avg * stock.qty >= 0.0;
-            const profClass = isProfit ? "profit" : "loss";
-            const dayClass = stock.isLoss ? "loss" : "profit";
-
-            return (
-              <tr key={index}>
-                <td>{stock.product}</td>
-                <td>{stock.name}</td>
-                <td>{stock.qty}</td>
-                <td>{stock.avg.toFixed(2)}</td>
-                <td>{stock.price.toFixed(2)}</td>
-                <td className={profClass}>
-                  {(curValue - stock.avg * stock.qty).toFixed(2)}
-                </td>
-                <td className={dayClass}>{stock.day}</td>
-              </tr>
-            );
-          })}
-        </table>
-      </div>
-    </>
+        </thead>
+        <tbody>
+          {positions.map((pos, i) => (
+            <tr key={i}>
+              <td>{pos.name}</td>
+              <td>{pos.qty}</td>
+              <td>{pos.avg}</td>
+              <td>{pos.price}</td>
+              <td>{pos.net}</td>
+              <td>{pos.day}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
-export default Positions;
+export default Dashboard;
