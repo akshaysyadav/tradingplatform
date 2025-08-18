@@ -1,5 +1,5 @@
-const {model} = require("mongoose");
-const {Orderschema} = require("../schemas/Orderschema");
+const { model } = require("mongoose");
+const { Positionschema } = require("../schemas/Positionschema");
 
-const Ordermodel = new model("order" , Orderschema);
-module.exports = Ordermodel;
+const Positionmodel = model("position", Positionschema);
+module.exports = Positionmodel;

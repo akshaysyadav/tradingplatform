@@ -1,28 +1,90 @@
-require('dotenv').config();
+require("dotenv").config();
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
-const Holdingmodel = require("./model/Holdingmodel");
-const Positionmodel = require("./model/Positionmodel");
-const Ordermodel = require("./model/Ordermodel");
-
-const authRoutes = require("./routes/auth");
-
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
+// Import models
+const HoldingModel = require("./model/Holdingmodel");
+const PositionModel = require("./model/Positionmodel");
+const OrderModel = require("./model/Ordermodel");
 
+// Import routes
+const authRoutes = require("./routes/auth");
+
+const app = express();
 const port = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
-// Connect once at startup
-mongoose.connect(url)
-  .then(() => console.log("DB connected"))
-  .catch(err => console.error("DB connection error:", err));
+// MongoDB connection
+mongoose
+  .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log(" MongoDB Connected"))
+  .catch((err) => console.error(" MongoDB Connection Error:", err));
 
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+
+// Routes
 app.use("/auth", authRoutes);
+
+// Get all positions
+app.get("/allposition", async (req, res) => {
+  try {
+    const allPosition = await PositionModel.find({});
+    res.json(allPosition);
+  } catch (err) {
+    console.error("Error fetching positions:", err);
+    res.status(500).json({ error: "Failed to fetch positions" });
+  }
+});
+
+// Get all holdings
+app.get("/allholdings", async (req, res) => {
+  try {
+    const allHoldings = await HoldingModel.find({});
+    res.json(allHoldings);
+  } catch (err) {
+    console.error("Error fetching holdings:", err);
+    res.status(500).json({ error: "Failed to fetch holdings" });
+  }
+});
+
+// Get all orders
+app.get("/allorders", async (req, res) => {
+  try {
+    const allOrders = await OrderModel.find({});
+    res.json(allOrders);
+  } catch (err) {
+    console.error("Error fetching orders:", err);
+    res.status(500).json({ error: "Failed to fetch orders" });
+  }
+});
+
+// Save new order
+app.post("/newOrder", async (req, res) => {
+  try {
+    const { name, qty, price, mode } = req.body;
+
+    if (!name || !qty || !price || !mode) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const newOrder = new OrderModel({ name, qty, price, mode });
+
+    await newOrder.save();
+    res.json({ message: "✅ Order saved!", order: newOrder });
+  } catch (err) {
+    console.error("Error saving order:", err);
+    res.status(500).json({ error: "Failed to save order" });
+  }
+});
+
+// Server start
+app.listen(port, () => {
+  console.log(`🚀 Server running on http://localhost:${port}`);
+});
+
 
 
 // app.get('/addHoldings', async (req, res) => {
@@ -100,31 +162,3 @@ app.use("/auth", authRoutes);
 // res.send("All positions saved successfully!");
 // });
 
-app.get("/allholding", async(req,res)=>{
-  let allHolding = await Holdingmodel.find({});
-  res.json(allHolding);
-});
-
-app.get("/allposition", async(req,res)=>{
-  let allposition = await Positionmodel.find({});
-  res.json(allposition);
-});
-
-app.post("/newOrder", async (req, res) => {
-  let newOrder = new OrdersModel({
-    name: req.body.name,
-    qty: req.body.qty,
-    price: req.body.price,
-    mode: req.body.mode,
-  });
-
-  newOrder.save();
-
-  res.send("Order saved!");
-});
-
-
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
