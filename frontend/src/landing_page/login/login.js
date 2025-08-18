@@ -14,7 +14,6 @@ function Login() {
     try {
       const res = await axios.post("https://tradingplatform-lv6u.onrender.com/auth/login", form);
       localStorage.setItem("token", res.data.token);
-      alert("Login successful!");
       window.location.href = "https://tradingplatform-1.onrender.com";
     } catch (err) {
       alert(err.response?.data?.error || "Something went wrong");
