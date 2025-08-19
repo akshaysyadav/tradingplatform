@@ -33,39 +33,39 @@ trading-platform/
 - ├── backend/ # Node.js + Express + MongoDB
 - │ ├── models/ # Mongoose schemas
 
-│ ├── routes/ # API routes (auth, holdings, positions, trades)
+-│ ├── routes/ # API routes (auth, holdings, positions, trades)
 
-│ ├── server.js # Main backend entry point
+-│ ├── server.js # Main backend entry point
 
-│ └── .env # Environment variables
+-│ └── .env # Environment variables
 │
 
 ## ├── frontend/ # React app (Signup/Login)
 
-│ ├── src/
+-│ ├── src/
 
-│ │ ├── components/ # Signup/Login components
+-│ │ ├── components/ # Signup/Login components
 
-│ │ ├── pages/ # Landing page, forms
+-│ │ ├── pages/ # Landing page, forms
 
-│ │ └── App.js # Routes setup
+-│ │ └── App.js # Routes setup
 
-│ └── package.json
+-│ └── package.json
 │
 
 ## ├── dashboard/ # React app (User dashboard after login)
 
-│ ├── src/
+-│ ├── src/
 
-│ │ ├── components/ # Summary, Holdings, Positions, Buy/Sell, Charts
+-│ │ ├── components/ # Summary, Holdings, Positions, Buy/Sell, Charts
 
-│ │ ├── pages/ # Dashboard UI
+-│ │ ├── pages/ # Dashboard UI
 
-│ │ └── App.js # Dashboard routes
+-│ │ └── App.js # Dashboard routes
 
-│ └── package.json
-│
-└── README.md # Project documentation
+-│ └── package.json
+-│
+-└── README.md # Project documentation
 
 ---
 
@@ -108,7 +108,6 @@ PORT=3001
 
 1️⃣ **Clone the repository**
 
-```bash
 git clone https://github.com/your-username/trading-platform.git
 cd trading-platform
 cd backend
