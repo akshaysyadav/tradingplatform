@@ -107,7 +107,7 @@ PORT=3001
 ## 🖥️ Installation & Setup
 
 1️⃣ **Clone the repository**
-
+```bash
 git clone https://github.com/your-username/trading-platform.git
 cd trading-platform
 cd backend
@@ -124,6 +124,7 @@ Dashboard Setup (User Portfolio)
 cd dashboard
 npm install
 npm start
+```
 
 📊 API Endpoints
 Method	 Endpoint	Description
@@ -131,6 +132,7 @@ POST	 /signup	Register new user
 POST	 /login	    Login user, return JWT token
 GET	  /allholdings	Fetch all holdings
 GET	  /allposition	Fetch all positions
+
 
 📈 Charts with Chart.js
 
@@ -167,4 +169,4 @@ Akshay Yadav
 💼 LinkedIn: https://www.linkedin.com/in/akshayyadav2005/
 
 🐙 GitHub: https://github.com/akshaysyadav
-```
+
