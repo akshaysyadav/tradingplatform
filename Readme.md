@@ -126,15 +126,18 @@ npm install
 npm start
 ```
 
-📊 API Endpoints
-Method	 Endpoint	Description
-POST	 /signup	Register new user
-POST	 /login	    Login user, return JWT token
-GET	  /allholdings	Fetch all holdings
-GET	  /allposition	Fetch all positions
+## 📊 API Endpoints  
+
+| Method | Endpoint      | Description                  |
+|--------|--------------|------------------------------|
+| POST   | `/signup`    | Register new user            |
+| POST   | `/login`     | Login user, return JWT token |
+| GET    | `/allholdings` | Fetch all holdings          |
+| GET    | `/allposition` | Fetch all positions         |
 
 
-📈 Charts with Chart.js
+
+##📈 Charts with Chart.js
 
 The dashboard includes interactive charts using Chart.js (through react-chartjs-2):
 
@@ -143,13 +146,13 @@ The dashboard includes interactive charts using Chart.js (through react-chartjs-
 🍩 Doughnut Chart: Visualizes asset distribution in the portfolio.
 
 
-👤 Personalization
+##👤 Personalization
 User signs up with username, email, password.
 After login, the username is fetched from backend and displayed on the dashboard header.
 Portfolio, holdings, and positions are fetched using JWT-authenticated API calls.
 
 
-🚀 Future Enhancements
+##🚀 Future Enhancements
 
 Live stock price integration
 
@@ -162,10 +165,10 @@ Notifications & Alerts
 Dark mode UI
 
 
-👨‍💻 Author
+##👨‍💻 Author
 
 Akshay Yadav
-
+-
 💼 LinkedIn: https://www.linkedin.com/in/akshayyadav2005/
 
 🐙 GitHub: https://github.com/akshaysyadav
