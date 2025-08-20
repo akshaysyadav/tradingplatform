@@ -28,9 +28,7 @@ Built using the **MERN stack**, structured into **3 modules**: `backend`, `front
 ## 📂 Project Structure
 
 trading-platform/
-│
--  ├── backend/ # Node.js + Express + MongoDB
--    
+│ -├── backend/ # Node.js + Express + MongoDB   
 -│ ├── models/ # Mongoose schemas
 
 -│ ├── routes/ # API routes (auth, holdings, positions, trades)
