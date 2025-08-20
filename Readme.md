@@ -6,22 +6,22 @@ Built using the **MERN stack**, structured into **3 modules**: `backend`, `front
 🔗 **Live Links**
 
 - 🎨 **Frontend (Signup/Login):** [https://tradingplatform-tau.vercel.app/](https://tradingplatform-tau.vercel.app/)
-- 🖥️ **Dashboard:** [https://tradingplatform-1.onrender.com](https://tradingplatform-1.onrender.com)
 - ⚙️ **Backend API:** [https://tradingplatform-lv6u.onrender.com](https://tradingplatform-lv6u.onrender.com)
+- 🖥️ **Dashboard:** [https://tradingplatform-1.onrender.com](https://tradingplatform-1.onrender.com)
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Frontend as Full Trading Website**
-- ✅ **User Authentication** (Signup & Login with JWT)
-- ✅ **Personalized Dashboard** (User-specific positions & holdings)
-- ✅ **Portfolio Summary** (Avg Price, Market Price, etc.)
-- ✅ **Chart.js Integration** → Interactive graphs for holdings & performance
-- ✅ **REST API** (Express.js + MongoDB backend)
-- ✅ **Modern UI** with React, Bootstrap, and CSS
-- ✅ **Secure Passwords** with bcrypt
-- ✅ **Deployed on Render & Vercel**
+-  **Frontend as Full Trading Website**
+-  **User Authentication** (Signup & Login with JWT)
+-  **Personalized Dashboard** (User-specific positions & holdings)
+-  **Portfolio Summary** (Avg Price, Market Price, etc.)
+-  **Chart.js Integration** → Interactive graphs for holdings & performance
+-  **REST API** (Express.js + MongoDB backend)
+-  **Modern UI** with React, Bootstrap, and CSS
+-  **Secure Passwords** with bcrypt
+-  **Deployed on Render & Vercel**
 
 ---
 
@@ -29,9 +29,9 @@ Built using the **MERN stack**, structured into **3 modules**: `backend`, `front
 
 trading-platform/
 │
-
-- ├── backend/ # Node.js + Express + MongoDB
-- │ ├── models/ # Mongoose schemas
+-  ├── backend/ # Node.js + Express + MongoDB
+-    
+-│ ├── models/ # Mongoose schemas
 
 -│ ├── routes/ # API routes (auth, holdings, positions, trades)
 
