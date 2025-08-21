@@ -169,5 +169,3 @@ Akshay Yadav
 -
 💼 LinkedIn: https://www.linkedin.com/in/akshayyadav2005/
 
-🐙 GitHub: https://github.com/akshaysyadav
-
