@@ -12,7 +12,10 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://tradingplatform-lv6u.onrender.com/auth/login", form);
+      const res = await axios.post(
+        "https://tradingplatform-lv6u.onrender.com/auth/login",
+        form
+      );
       localStorage.setItem("token", res.data.token);
       window.location.href = "https://tradingplatform-1.onrender.com";
     } catch (err) {
@@ -30,8 +33,11 @@ function Login() {
           </div>
           <h1 className="login-title">Welcome Back</h1>
           <p className="login-subtitle">Please sign in to your account</p>
+          <p className="login-subtitle">
+            Please wait for backend to get active atleast 10 sec
+          </p>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="login-form">
           <div className="input-group">
             <label className="input-label">Email Address</label>
@@ -47,7 +53,7 @@ function Login() {
               />
             </div>
           </div>
-          
+
           <div className="input-group">
             <label className="input-label">Password</label>
             <div className="input-wrapper">
@@ -62,16 +68,19 @@ function Login() {
               />
             </div>
           </div>
-          
+
           <button type="submit" className="submit-button">
             <span className="button-text">Sign In</span>
             <div className="button-shine"></div>
           </button>
         </form>
-        
+
         <div className="login-footer">
           <p className="footer-text">
-            Don't have an account? <a href="/signup" className="footer-link">Sign up here</a>
+            Don't have an account?{" "}
+            <a href="/signup" className="footer-link">
+              Sign up here
+            </a>
           </p>
         </div>
       </div>
