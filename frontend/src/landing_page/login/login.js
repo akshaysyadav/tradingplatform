@@ -34,7 +34,7 @@ function Login() {
           <h1 className="login-title">Welcome Back</h1>
           <p className="login-subtitle">Please sign in to your account</p>
           <p className="login-subtitle">
-            Please wait for backend to get active atleast 10 sec
+            Please wait at least 10 seconds for the backend to start
           </p>
         </div>
 
